@@ -4,14 +4,17 @@ import java.util.Objects;
 
 public class Employer {
     private int id;
+    //Declares the variable nextId. Since it is static, its changing value is NOT stored within any Employer object.
     private static int nextId = 1;
     private String value;
-
+    //Accepts no arguments and assigns the value of nextId to the id field. It then increments nextId.
+    // Thus, every new Employer object will get a different ID number.
     public Employer() {
         id = nextId;
         nextId++;
     }
-
+    // assigns aValue to the value field. However, it ALSO initializes id for the object by calling the first constructor with the this();
+    // statement. Including this(); in any Employer constructor makes initializing id a default behavior
     public Employer(String value) {
         this();
         this.value = value;
